@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57455EE61964D01800482FD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57455EE51964D01800482FD1 /* Foundation.framework */; };
+		57455EE81964D01800482FD1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57455EE71964D01800482FD1 /* CoreGraphics.framework */; };
+		57455EEA1964D01800482FD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57455EE91964D01800482FD1 /* UIKit.framework */; };
+		57455EF01964D01800482FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57455EEE1964D01800482FD1 /* InfoPlist.strings */; };
+		57455EF21964D01800482FD1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57455EF11964D01800482FD1 /* main.m */; };
+		57455EF61964D01800482FD1 /* TKBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57455EF51964D01800482FD1 /* TKBAppDelegate.m */; };
+		57455EF91964D01800482FD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57455EF71964D01800482FD1 /* Main.storyboard */; };
+		57455EFC1964D01800482FD1 /* TKBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57455EFB1964D01800482FD1 /* TKBViewController.m */; };
+		57455EFE1964D01800482FD1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57455EFD1964D01800482FD1 /* Images.xcassets */; };
+		57455F051964D01800482FD1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57455F041964D01800482FD1 /* XCTest.framework */; };
+		57455F061964D01800482FD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57455EE51964D01800482FD1 /* Foundation.framework */; };
+		57455F071964D01800482FD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57455EE91964D01800482FD1 /* UIKit.framework */; };
+		57455F0F1964D01900482FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57455F0D1964D01900482FD1 /* InfoPlist.strings */; };
+		57455F111964D01900482FD1 /* SimultanEquatSolutionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57455F101964D01900482FD1 /* SimultanEquatSolutionTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		57455F081964D01900482FD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 57455EDA1964D01800482FD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 57455EE11964D01800482FD1;
+			remoteInfo = SimultanEquatSolution;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		57455EE21964D01800482FD1 /* SimultanEquatSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimultanEquatSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57455EE51964D01800482FD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		57455EE71964D01800482FD1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		57455EE91964D01800482FD1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		57455EED1964D01800482FD1 /* SimultanEquatSolution-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimultanEquatSolution-Info.plist"; sourceTree = "<group>"; };
+		57455EEF1964D01800482FD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		57455EF11964D01800482FD1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		57455EF31964D01800482FD1 /* SimultanEquatSolution-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimultanEquatSolution-Prefix.pch"; sourceTree = "<group>"; };
+		57455EF41964D01800482FD1 /* TKBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKBAppDelegate.h; sourceTree = "<group>"; };
+		57455EF51964D01800482FD1 /* TKBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKBAppDelegate.m; sourceTree = "<group>"; };
+		57455EF81964D01800482FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		57455EFA1964D01800482FD1 /* TKBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKBViewController.h; sourceTree = "<group>"; };
+		57455EFB1964D01800482FD1 /* TKBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKBViewController.m; sourceTree = "<group>"; };
+		57455EFD1964D01800482FD1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		57455F031964D01800482FD1 /* SimultanEquatSolutionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimultanEquatSolutionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		57455F041964D01800482FD1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		57455F0C1964D01900482FD1 /* SimultanEquatSolutionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimultanEquatSolutionTests-Info.plist"; sourceTree = "<group>"; };
+		57455F0E1964D01900482FD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		57455F101964D01900482FD1 /* SimultanEquatSolutionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimultanEquatSolutionTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57455EDF1964D01800482FD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57455EE81964D01800482FD1 /* CoreGraphics.framework in Frameworks */,
+				57455EEA1964D01800482FD1 /* UIKit.framework in Frameworks */,
+				57455EE61964D01800482FD1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57455F001964D01800482FD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57455F051964D01800482FD1 /* XCTest.framework in Frameworks */,
+				57455F071964D01800482FD1 /* UIKit.framework in Frameworks */,
+				57455F061964D01800482FD1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		57455ED91964D01800482FD1 = {
+			isa = PBXGroup;
+			children = (
+				57455EEB1964D01800482FD1 /* SimultanEquatSolution */,
+				57455F0A1964D01900482FD1 /* SimultanEquatSolutionTests */,
+				57455EE41964D01800482FD1 /* Frameworks */,
+				57455EE31964D01800482FD1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		57455EE31964D01800482FD1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57455EE21964D01800482FD1 /* SimultanEquatSolution.app */,
+				57455F031964D01800482FD1 /* SimultanEquatSolutionTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57455EE41964D01800482FD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57455EE51964D01800482FD1 /* Foundation.framework */,
+				57455EE71964D01800482FD1 /* CoreGraphics.framework */,
+				57455EE91964D01800482FD1 /* UIKit.framework */,
+				57455F041964D01800482FD1 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		57455EEB1964D01800482FD1 /* SimultanEquatSolution */ = {
+			isa = PBXGroup;
+			children = (
+				57455EF41964D01800482FD1 /* TKBAppDelegate.h */,
+				57455EF51964D01800482FD1 /* TKBAppDelegate.m */,
+				57455EF71964D01800482FD1 /* Main.storyboard */,
+				57455EFA1964D01800482FD1 /* TKBViewController.h */,
+				57455EFB1964D01800482FD1 /* TKBViewController.m */,
+				57455EFD1964D01800482FD1 /* Images.xcassets */,
+				57455EEC1964D01800482FD1 /* Supporting Files */,
+			);
+			path = SimultanEquatSolution;
+			sourceTree = "<group>";
+		};
+		57455EEC1964D01800482FD1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				57455EED1964D01800482FD1 /* SimultanEquatSolution-Info.plist */,
+				57455EEE1964D01800482FD1 /* InfoPlist.strings */,
+				57455EF11964D01800482FD1 /* main.m */,
+				57455EF31964D01800482FD1 /* SimultanEquatSolution-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		57455F0A1964D01900482FD1 /* SimultanEquatSolutionTests */ = {
+			isa = PBXGroup;
+			children = (
+				57455F101964D01900482FD1 /* SimultanEquatSolutionTests.m */,
+				57455F0B1964D01900482FD1 /* Supporting Files */,
+			);
+			path = SimultanEquatSolutionTests;
+			sourceTree = "<group>";
+		};
+		57455F0B1964D01900482FD1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				57455F0C1964D01900482FD1 /* SimultanEquatSolutionTests-Info.plist */,
+				57455F0D1964D01900482FD1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57455EE11964D01800482FD1 /* SimultanEquatSolution */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57455F141964D01900482FD1 /* Build configuration list for PBXNativeTarget "SimultanEquatSolution" */;
+			buildPhases = (
+				57455EDE1964D01800482FD1 /* Sources */,
+				57455EDF1964D01800482FD1 /* Frameworks */,
+				57455EE01964D01800482FD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimultanEquatSolution;
+			productName = SimultanEquatSolution;
+			productReference = 57455EE21964D01800482FD1 /* SimultanEquatSolution.app */;
+			productType = "com.apple.product-type.application";
+		};
+		57455F021964D01800482FD1 /* SimultanEquatSolutionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57455F171964D01900482FD1 /* Build configuration list for PBXNativeTarget "SimultanEquatSolutionTests" */;
+			buildPhases = (
+				57455EFF1964D01800482FD1 /* Sources */,
+				57455F001964D01800482FD1 /* Frameworks */,
+				57455F011964D01800482FD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				57455F091964D01900482FD1 /* PBXTargetDependency */,
+			);
+			name = SimultanEquatSolutionTests;
+			productName = SimultanEquatSolutionTests;
+			productReference = 57455F031964D01800482FD1 /* SimultanEquatSolutionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57455EDA1964D01800482FD1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TKB;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "COINS Project AID";
+				TargetAttributes = {
+					57455F021964D01800482FD1 = {
+						TestTargetID = 57455EE11964D01800482FD1;
+					};
+				};
+			};
+			buildConfigurationList = 57455EDD1964D01800482FD1 /* Build configuration list for PBXProject "SimultanEquatSolution" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 57455ED91964D01800482FD1;
+			productRefGroup = 57455EE31964D01800482FD1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57455EE11964D01800482FD1 /* SimultanEquatSolution */,
+				57455F021964D01800482FD1 /* SimultanEquatSolutionTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		57455EE01964D01800482FD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57455EFE1964D01800482FD1 /* Images.xcassets in Resources */,
+				57455EF01964D01800482FD1 /* InfoPlist.strings in Resources */,
+				57455EF91964D01800482FD1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57455F011964D01800482FD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57455F0F1964D01900482FD1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57455EDE1964D01800482FD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57455EF61964D01800482FD1 /* TKBAppDelegate.m in Sources */,
+				57455EF21964D01800482FD1 /* main.m in Sources */,
+				57455EFC1964D01800482FD1 /* TKBViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57455EFF1964D01800482FD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57455F111964D01900482FD1 /* SimultanEquatSolutionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		57455F091964D01900482FD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 57455EE11964D01800482FD1 /* SimultanEquatSolution */;
+			targetProxy = 57455F081964D01900482FD1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		57455EEE1964D01800482FD1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57455EEF1964D01800482FD1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		57455EF71964D01800482FD1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57455EF81964D01800482FD1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		57455F0D1964D01900482FD1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57455F0E1964D01900482FD1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		57455F121964D01900482FD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		57455F131964D01900482FD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		57455F151964D01900482FD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimultanEquatSolution/SimultanEquatSolution-Prefix.pch";
+				INFOPLIST_FILE = "SimultanEquatSolution/SimultanEquatSolution-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		57455F161964D01900482FD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimultanEquatSolution/SimultanEquatSolution-Prefix.pch";
+				INFOPLIST_FILE = "SimultanEquatSolution/SimultanEquatSolution-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		57455F181964D01900482FD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SimultanEquatSolution.app/SimultanEquatSolution";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimultanEquatSolution/SimultanEquatSolution-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SimultanEquatSolutionTests/SimultanEquatSolutionTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		57455F191964D01900482FD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SimultanEquatSolution.app/SimultanEquatSolution";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimultanEquatSolution/SimultanEquatSolution-Prefix.pch";
+				INFOPLIST_FILE = "SimultanEquatSolutionTests/SimultanEquatSolutionTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57455EDD1964D01800482FD1 /* Build configuration list for PBXProject "SimultanEquatSolution" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57455F121964D01900482FD1 /* Debug */,
+				57455F131964D01900482FD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57455F141964D01900482FD1 /* Build configuration list for PBXNativeTarget "SimultanEquatSolution" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57455F151964D01900482FD1 /* Debug */,
+				57455F161964D01900482FD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		57455F171964D01900482FD1 /* Build configuration list for PBXNativeTarget "SimultanEquatSolutionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57455F181964D01900482FD1 /* Debug */,
+				57455F191964D01900482FD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 57455EDA1964D01800482FD1 /* Project object */;
+}
