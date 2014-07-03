@@ -200,6 +200,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "COINS Project AID";
 				TargetAttributes = {
+					57455EE11964D01800482FD1 = {
+						DevelopmentTeam = RM3N4N4RRF;
+					};
 					57455F021964D01800482FD1 = {
 						TestTargetID = 57455EE11964D01800482FD1;
 					};
@@ -379,6 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimultanEquatSolution/SimultanEquatSolution-Prefix.pch";
 				INFOPLIST_FILE = "SimultanEquatSolution/SimultanEquatSolution-Info.plist";
@@ -392,6 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimultanEquatSolution/SimultanEquatSolution-Prefix.pch";
 				INFOPLIST_FILE = "SimultanEquatSolution/SimultanEquatSolution-Info.plist";
