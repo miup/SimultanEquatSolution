@@ -7,17 +7,23 @@
 //
 
 #import "TKBViewController.h"
+#import "TKBSEQuestionMaker.h"
 
 @interface TKBViewController ()
 
 @end
 
-@implementation TKBViewController
-
+@implementation TKBViewController {
+    TKBSEQuestionMaker *_SEQMaker;
+}
+ 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

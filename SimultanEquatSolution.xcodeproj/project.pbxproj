@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		573F42A11967CACA00E350B9 /* TKBSEQuestionMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F42A01967CACA00E350B9 /* TKBSEQuestionMaker.m */; };
+		573F42A81967CB0500E350B9 /* TKBSEQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F42A71967CB0500E350B9 /* TKBSEQuestion.m */; };
 		57455EE61964D01800482FD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57455EE51964D01800482FD1 /* Foundation.framework */; };
 		57455EE81964D01800482FD1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57455EE71964D01800482FD1 /* CoreGraphics.framework */; };
 		57455EEA1964D01800482FD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57455EE91964D01800482FD1 /* UIKit.framework */; };
@@ -34,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		573F429F1967CACA00E350B9 /* TKBSEQuestionMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBSEQuestionMaker.h; sourceTree = "<group>"; };
+		573F42A01967CACA00E350B9 /* TKBSEQuestionMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBSEQuestionMaker.m; sourceTree = "<group>"; };
+		573F42A61967CB0500E350B9 /* TKBSEQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBSEQuestion.h; sourceTree = "<group>"; };
+		573F42A71967CB0500E350B9 /* TKBSEQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBSEQuestion.m; sourceTree = "<group>"; };
 		57455EE21964D01800482FD1 /* SimultanEquatSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimultanEquatSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57455EE51964D01800482FD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		57455EE71964D01800482FD1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -114,9 +120,9 @@
 			children = (
 				57455EF41964D01800482FD1 /* TKBAppDelegate.h */,
 				57455EF51964D01800482FD1 /* TKBAppDelegate.m */,
-				57455EF71964D01800482FD1 /* Main.storyboard */,
-				57455EFA1964D01800482FD1 /* TKBViewController.h */,
-				57455EFB1964D01800482FD1 /* TKBViewController.m */,
+				57455F1C1964EC5B00482FD1 /* Contoroller */,
+				57455F1B1964EC5400482FD1 /* Model */,
+				57455F1A1964EC4200482FD1 /* View */,
 				57455EFD1964D01800482FD1 /* Images.xcassets */,
 				57455EEC1964D01800482FD1 /* Supporting Files */,
 			);
@@ -150,6 +156,34 @@
 				57455F0D1964D01900482FD1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		57455F1A1964EC4200482FD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57455EF71964D01800482FD1 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		57455F1B1964EC5400482FD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				573F429F1967CACA00E350B9 /* TKBSEQuestionMaker.h */,
+				573F42A01967CACA00E350B9 /* TKBSEQuestionMaker.m */,
+				573F42A61967CB0500E350B9 /* TKBSEQuestion.h */,
+				573F42A71967CB0500E350B9 /* TKBSEQuestion.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		57455F1C1964EC5B00482FD1 /* Contoroller */ = {
+			isa = PBXGroup;
+			children = (
+				57455EFA1964D01800482FD1 /* TKBViewController.h */,
+				57455EFB1964D01800482FD1 /* TKBViewController.m */,
+			);
+			name = Contoroller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				573F42A11967CACA00E350B9 /* TKBSEQuestionMaker.m in Sources */,
 				57455EF61964D01800482FD1 /* TKBAppDelegate.m in Sources */,
+				573F42A81967CB0500E350B9 /* TKBSEQuestion.m in Sources */,
 				57455EF21964D01800482FD1 /* main.m in Sources */,
 				57455EFC1964D01800482FD1 /* TKBViewController.m in Sources */,
 			);
@@ -464,6 +500,7 @@
 				57455F161964D01900482FD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		57455F171964D01900482FD1 /* Build configuration list for PBXNativeTarget "SimultanEquatSolutionTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +509,7 @@
 				57455F191964D01900482FD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
