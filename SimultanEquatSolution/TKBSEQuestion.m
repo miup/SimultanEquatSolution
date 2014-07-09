@@ -56,7 +56,7 @@
 {
     //連立方程式の表示
     NSLog(@"SE1:%ldx + %ldy = %ld", _x1Coefficient, _y1Coefficient, _constant1);
-    NSLog(@"SE2;%ldx + %ldy = %ld", _x2Coefficient, _y2Coefficient, _constant2);
+    NSLog(@"SE2:%ldx + %ldy = %ld", _x2Coefficient, _y2Coefficient, _constant2);
     NSLog(@"x = %ld, y = %ld", _solutionX, _solutionY);
     
 }
