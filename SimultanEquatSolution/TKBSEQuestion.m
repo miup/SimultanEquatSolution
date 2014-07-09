@@ -29,8 +29,8 @@
 - (void)makeSEQuestionWithMaxCoefficient:(NSInteger)maxCoefficient allowFraction:(BOOL)allowFraction
 {
     // 解として-9~9までのランダムの数値を作成
-    int x = (arc4random() % 19) -9;
-    int y = (arc4random() % 19) -9;
+    NSInteger x = arc4random() % (maxCoefficient * 2 + 1) -maxCoefficient;
+    NSInteger y = arc4random() % (maxCoefficient * 2 + 1) -maxCoefficient;
     _solutionX = x;
     _solutionY = y;
     NSInteger SE1 = 0;

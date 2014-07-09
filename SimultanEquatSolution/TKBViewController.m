@@ -21,7 +21,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    _SEQMaker = [TKBSEQuestionMaker SEQuestionMakerWithMaxCoefficient:7 allowFraction:NO];
+    _SEQMaker = [TKBSEQuestionMaker SEQuestionMakerWithMaxCoefficient:6 allowFraction:NO];
     TKBSEQuestion *seq = [_SEQMaker makeSEQuestion];
     [seq display];
 }
