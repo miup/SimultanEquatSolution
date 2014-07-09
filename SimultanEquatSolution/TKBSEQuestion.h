@@ -22,4 +22,6 @@
 
 + (TKBSEQuestion *)SEQuestionWithMaxCoefficient:(NSInteger)maxCoefficient allowFraction:(BOOL)allowFraction;
 
+- (void)display;
+
 @end
