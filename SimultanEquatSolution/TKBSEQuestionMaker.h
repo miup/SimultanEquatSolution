@@ -25,5 +25,5 @@ typedef enum SEQuestionType {
 
 
 + (TKBSEQuestionMaker *)SEQuestionMakerWithMaxCoefficient:(NSInteger)maxCoefficient allowFraction:(BOOL)allowFraction;
-- (TKBSEQuestion *)makeSEQuestionWithMaxCoefficient:(NSInteger)maxCoefficient allowFraction:(BOOL)allowFraction;
+- (TKBSEQuestion *)makeSEQuestion;
 @end

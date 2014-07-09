@@ -29,10 +29,9 @@
 }
 
 
-- (TKBSEQuestion *)makeSEQuestionWithMaxCoefficient:(NSInteger)maxCoefficient allowFraction:(BOOL)allowFraction
+- (TKBSEQuestion *)makeSEQuestion
 {
-    
-    return nil;
+    return [TKBSEQuestion SEQuestionWithMaxCoefficient:_maxCoefficient allowFraction:_maxCoefficient];
 }
 
 
