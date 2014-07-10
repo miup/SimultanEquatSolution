@@ -7,22 +7,21 @@
 //
 
 #import "TKBViewController.h"
-#import "TKBSEQuestionMaker.h"
+#import "TKBSEQuestion.h"
 
 @interface TKBViewController ()
 
 @end
 
 @implementation TKBViewController {
-    TKBSEQuestionMaker *_SEQMaker;
+    
 }
  
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    _SEQMaker = [TKBSEQuestionMaker SEQuestionMakerWithMaxCoefficient:6 allowFraction:NO];
-    TKBSEQuestion *seq = [_SEQMaker makeSEQuestion];
+    TKBSEQuestion *seq = [TKBSEQuestion SEQuestionWithMaxCoefficient:6 allowFraction:NO];
     [seq display];
 }
 

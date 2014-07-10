@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		573F42A11967CACA00E350B9 /* TKBSEQuestionMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F42A01967CACA00E350B9 /* TKBSEQuestionMaker.m */; };
 		573F42A81967CB0500E350B9 /* TKBSEQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F42A71967CB0500E350B9 /* TKBSEQuestion.m */; };
 		57455EE61964D01800482FD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57455EE51964D01800482FD1 /* Foundation.framework */; };
 		57455EE81964D01800482FD1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57455EE71964D01800482FD1 /* CoreGraphics.framework */; };
@@ -36,8 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		573F429F1967CACA00E350B9 /* TKBSEQuestionMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBSEQuestionMaker.h; sourceTree = "<group>"; };
-		573F42A01967CACA00E350B9 /* TKBSEQuestionMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBSEQuestionMaker.m; sourceTree = "<group>"; };
 		573F42A61967CB0500E350B9 /* TKBSEQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBSEQuestion.h; sourceTree = "<group>"; };
 		573F42A71967CB0500E350B9 /* TKBSEQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBSEQuestion.m; sourceTree = "<group>"; };
 		57455EE21964D01800482FD1 /* SimultanEquatSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimultanEquatSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,8 +166,6 @@
 		57455F1B1964EC5400482FD1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				573F429F1967CACA00E350B9 /* TKBSEQuestionMaker.h */,
-				573F42A01967CACA00E350B9 /* TKBSEQuestionMaker.m */,
 				573F42A61967CB0500E350B9 /* TKBSEQuestion.h */,
 				573F42A71967CB0500E350B9 /* TKBSEQuestion.m */,
 			);
@@ -287,7 +282,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				573F42A11967CACA00E350B9 /* TKBSEQuestionMaker.m in Sources */,
 				57455EF61964D01800482FD1 /* TKBAppDelegate.m in Sources */,
 				573F42A81967CB0500E350B9 /* TKBSEQuestion.m in Sources */,
 				57455EF21964D01800482FD1 /* main.m in Sources */,
