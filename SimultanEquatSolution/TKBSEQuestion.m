@@ -54,8 +54,19 @@
 
 - (NSString *)toStringWithNumberOfFormula:(NSInteger)numberOfFormula
 {
-    if(numberOfFormula == 1) return [NSString stringWithFormat:@"%ldx + %ldy = %ld", _x1Coefficient, _y1Coefficient, _constant1];
-    else                     return [NSString stringWithFormat:@"%ldx + %ldy = %ld", _x2Coefficient, _y2Coefficient, _constant2];
+    switch (numberOfFormula) {
+        case 1:
+            if (_y1Coefficient < 0) return [NSString stringWithFormat:@"%ldx %ldy = %ld", _x1Coefficient, _y1Coefficient, _constant1];
+            else                    return [NSString stringWithFormat:@"%ldx +%ldy = %ld", _x1Coefficient, _y1Coefficient, _constant1];
+            break;
+        case 2:
+            if (_y2Coefficient < 0) return [NSString stringWithFormat:@"%ldx %ldy = %ld", _x2Coefficient, _y2Coefficient, _constant2];
+            else                    return [NSString stringWithFormat:@"%ldx +%ldy = %ld", _x2Coefficient, _y2Coefficient, _constant2];
+            break;
+        default:
+            return nil;
+            break;
+    }
 }
 
 - (void)display
