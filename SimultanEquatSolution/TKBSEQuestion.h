@@ -22,6 +22,8 @@
 
 + (TKBSEQuestion *)SEQuestionWithMaxCoefficient:(NSInteger)maxCoefficient allowFraction:(BOOL)allowFraction;
 
+- (NSString *)toStringWithNumberOfFormula:(NSInteger)numberOfFormula;
+
 - (void)display;
 
 @end

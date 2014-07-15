@@ -52,6 +52,12 @@
     
 }
 
+- (NSString *)toStringWithNumberOfFormula:(NSInteger)numberOfFormula
+{
+    if(numberOfFormula == 1) return [NSString stringWithFormat:@"%ldx + %ldy = %ld", _x1Coefficient, _y1Coefficient, _constant1];
+    else                     return [NSString stringWithFormat:@"%ldx + %ldy = %ld", _x2Coefficient, _y2Coefficient, _constant2];
+}
+
 - (void)display
 {
     //連立方程式の表示
@@ -64,13 +70,9 @@
 //一致、または平行移動になっているかどうか
 - (BOOL) isParallelWithMaxCoefficient:(NSInteger)maxCoefficient
 {
-    
-    for (int i = (int)-maxCoefficient; i < maxCoefficient; i++) {
-        for (int j = (int)-maxCoefficient; j < maxCoefficient; j++) {
-            if (i * _x1Coefficient == j * _x2Coefficient && i * _y1Coefficient == _y2Coefficient && i != 0 && j != 0) return TRUE;
-        }
-    }
-    return false;
+    NSInteger delta = _x1Coefficient * _y2Coefficient -_x2Coefficient * _y1Coefficient;
+    return delta == 0 ? TRUE : FALSE;
 }
+
 
 @end

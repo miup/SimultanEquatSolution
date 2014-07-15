@@ -10,6 +10,8 @@
 #import "TKBSEQuestion.h"
 
 @interface TKBViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *simaltanEquation1Label;
+@property (weak, nonatomic) IBOutlet UILabel *simaltanEquation2Label;
 
 @end
 
@@ -23,6 +25,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     TKBSEQuestion *seq = [TKBSEQuestion SEQuestionWithMaxCoefficient:6 allowFraction:NO];
     [seq display];
+    _simaltanEquation1Label.text = [seq toStringWithNumberOfFormula:1];
+    _simaltanEquation2Label.text = [seq toStringWithNumberOfFormula:2];
 }
 
 - (void)didReceiveMemoryWarning
