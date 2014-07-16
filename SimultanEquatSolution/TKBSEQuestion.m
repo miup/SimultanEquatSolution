@@ -47,7 +47,7 @@
         SE1 = _x1Coefficient * _solutionX + _y1Coefficient * _solutionY - _constant1;
         SE2 = _x2Coefficient * _solutionX + _y2Coefficient * _solutionY - _constant2;
         
-    } while (SE1 != SE2 || _x1Coefficient == 0 || _y1Coefficient == 0 || _x2Coefficient == 0 || _y2Coefficient == 0 || [self isParallelWithMaxCoefficient:maxCoefficient]);
+    } while (SE1 != SE2 || _x1Coefficient == 0 || _y1Coefficient == 0 || _x2Coefficient == 0 || _y2Coefficient == 0 || [self isParallel]);
     
     
 }
@@ -64,7 +64,7 @@
             else                    return [NSString stringWithFormat:@"%ldx +%ldy = %ld", _x2Coefficient, _y2Coefficient, _constant2];
             break;
         default:
-            return nil;
+            return @""; //numberofFormulaがおかしい
             break;
     }
 }
@@ -79,10 +79,15 @@
 }
 
 //一致、または平行移動になっているかどうか
-- (BOOL) isParallelWithMaxCoefficient:(NSInteger)maxCoefficient
+- (BOOL) isParallel
 {
     NSInteger delta = _x1Coefficient * _y2Coefficient -_x2Coefficient * _y1Coefficient;
     return delta == 0 ? TRUE : FALSE;
+}
+
+- (void)multipleFormulaWithNumberOfFormula:(NSUInteger)numberOfFormula multipleNumber:(NSUInteger)multipleNumber
+{
+    
 }
 
 

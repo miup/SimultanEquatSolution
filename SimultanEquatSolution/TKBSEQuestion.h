@@ -26,4 +26,6 @@
 
 - (void)display;
 
+
+- (void)multipleFormulaWithNumberOfFormula:(NSUInteger)numberOfFormula multipleNumber:(NSUInteger)multipleNumber;
 @end
