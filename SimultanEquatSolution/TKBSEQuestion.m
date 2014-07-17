@@ -18,6 +18,9 @@
 {
     self = [super init];
     if (self) {
+        _se1 = [[TKBSimaltanEquatFormula alloc] init];
+        _se2 = [[TKBSimaltanEquatFormula alloc] init];
+        
         //方程式の作成
         [self makeSEQuestionWithMaxCoefficient:maxCoefficient allowFraction:allowFraction];
     }
@@ -36,8 +39,7 @@
     NSInteger y = arc4random() % (maxCoefficient * 2 + 1) -maxCoefficient;
     _solutionX = x;
     _solutionY = y;
-    NSInteger SE1 = 0;
-    NSInteger SE2 = 0;
+    
     
     do {
         NSInteger x1Coefficient = arc4random() % (maxCoefficient * 2 + 1) -maxCoefficient;
@@ -48,12 +50,10 @@
         NSInteger constant1 = x1Coefficient * _solutionX + y1Coefficient * _solutionY;
         NSInteger constant2 = x2Coefficient * _solutionX + y2Coefficient * _solutionY;
         
-        SE1 = x1Coefficient * _solutionX + y1Coefficient * _solutionY - constant1;
-        SE2 = x2Coefficient * _solutionX + y2Coefficient * _solutionY - constant2;
         [_se1 setXCoefficient:x1Coefficient yCoefficient:y1Coefficient constant:constant1];
-        [_se1 setXCoefficient:x2Coefficient yCoefficient:y2Coefficient constant:constant2];
+        [_se2 setXCoefficient:x2Coefficient yCoefficient:y2Coefficient constant:constant2];
         
-    } while (SE1 != SE2 || _se1.xCoefficient == 0 || _se1.yCoefficient == 0 || _se2.xCoefficient == 0 || _se2.yCoefficient == 0 || [self isParallel]);
+    } while (_se1.xCoefficient == 0 || _se1.yCoefficient == 0 || _se2.xCoefficient == 0 || _se2.yCoefficient == 0 || [self isParallel]);
     
     
 }
@@ -66,7 +66,7 @@
             else                    return [NSString stringWithFormat:@"%ldx + %ldy = %ld", _se1.xCoefficient, _se1.yCoefficient, _se1.constant];
             break;
         case 2:
-            if (_se2.yCoefficient < 0) return [NSString stringWithFormat:@"%ldx %ldy = %ld", _se2.xCoefficient, _se2.yCoefficient, _se2.constant];;
+            if (_se2.yCoefficient < 0) return [NSString stringWithFormat:@"%ldx %ldy = %ld", _se2.xCoefficient, _se2.yCoefficient, _se2.constant];
             else                    return [NSString stringWithFormat:@"%ldx + %ldy = %ld", _se2.xCoefficient, _se2.yCoefficient, _se2.constant];
             break;
         default:

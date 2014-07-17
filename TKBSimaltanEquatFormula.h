@@ -15,5 +15,8 @@
 @property NSInteger constant;
 
 - (void)setXCoefficient:(NSInteger)xCoefficient yCoefficient:(NSInteger)yCoefficient constant:(NSInteger)constant;
+-(TKBSimaltanEquatFormula *)multipleFormulaWithMultipleNumber:(NSInteger)multipleNumber;
+- (void)display;
+
 
 @end

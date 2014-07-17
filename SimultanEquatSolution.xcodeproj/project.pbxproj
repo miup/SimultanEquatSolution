@@ -23,6 +23,11 @@
 		57455F0F1964D01900482FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57455F0D1964D01900482FD1 /* InfoPlist.strings */; };
 		57455F111964D01900482FD1 /* SimultanEquatSolutionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57455F101964D01900482FD1 /* SimultanEquatSolutionTests.m */; };
 		5748C59C1977AE1600996F15 /* TKBSimaltanEquatFormula.m in Sources */ = {isa = PBXBuildFile; fileRef = 5748C59B1977AE1600996F15 /* TKBSimaltanEquatFormula.m */; };
+		E5226D831977F6E1003D7324 /* TKBPopoverContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E5226D821977F6E1003D7324 /* TKBPopoverContext.m */; };
+		E5226D8D19780856003D7324 /* TKBSESolveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5226D8B19780856003D7324 /* TKBSESolveViewController.m */; };
+		E5226D8E19780856003D7324 /* TKBSESolveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5226D8C19780856003D7324 /* TKBSESolveViewController.xib */; };
+		E5226D921978086C003D7324 /* TKBSEAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5226D901978086C003D7324 /* TKBSEAnswerViewController.m */; };
+		E5226D931978086C003D7324 /* TKBSEAnswerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5226D911978086C003D7324 /* TKBSEAnswerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +62,16 @@
 		57455F0C1964D01900482FD1 /* SimultanEquatSolutionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimultanEquatSolutionTests-Info.plist"; sourceTree = "<group>"; };
 		57455F0E1964D01900482FD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		57455F101964D01900482FD1 /* SimultanEquatSolutionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimultanEquatSolutionTests.m; sourceTree = "<group>"; };
-		5748C59A1977AE1600996F15 /* TKBSimaltanEquatFormula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBSimaltanEquatFormula.h; sourceTree = "<group>"; };
-		5748C59B1977AE1600996F15 /* TKBSimaltanEquatFormula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBSimaltanEquatFormula.m; sourceTree = "<group>"; };
+		5748C59A1977AE1600996F15 /* TKBSimaltanEquatFormula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKBSimaltanEquatFormula.h; path = ../TKBSimaltanEquatFormula.h; sourceTree = "<group>"; };
+		5748C59B1977AE1600996F15 /* TKBSimaltanEquatFormula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKBSimaltanEquatFormula.m; path = ../TKBSimaltanEquatFormula.m; sourceTree = "<group>"; };
+		E5226D811977F6E1003D7324 /* TKBPopoverContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBPopoverContext.h; sourceTree = "<group>"; };
+		E5226D821977F6E1003D7324 /* TKBPopoverContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBPopoverContext.m; sourceTree = "<group>"; };
+		E5226D8A19780856003D7324 /* TKBSESolveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBSESolveViewController.h; sourceTree = "<group>"; };
+		E5226D8B19780856003D7324 /* TKBSESolveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBSESolveViewController.m; sourceTree = "<group>"; };
+		E5226D8C19780856003D7324 /* TKBSESolveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKBSESolveViewController.xib; sourceTree = "<group>"; };
+		E5226D8F1978086C003D7324 /* TKBSEAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBSEAnswerViewController.h; sourceTree = "<group>"; };
+		E5226D901978086C003D7324 /* TKBSEAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBSEAnswerViewController.m; sourceTree = "<group>"; };
+		E5226D911978086C003D7324 /* TKBSEAnswerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKBSEAnswerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +101,6 @@
 		57455ED91964D01800482FD1 = {
 			isa = PBXGroup;
 			children = (
-				5748C59A1977AE1600996F15 /* TKBSimaltanEquatFormula.h */,
-				5748C59B1977AE1600996F15 /* TKBSimaltanEquatFormula.m */,
 				57455EEB1964D01800482FD1 /* SimultanEquatSolution */,
 				57455F0A1964D01900482FD1 /* SimultanEquatSolutionTests */,
 				57455EE41964D01800482FD1 /* Frameworks */,
@@ -120,12 +131,14 @@
 		57455EEB1964D01800482FD1 /* SimultanEquatSolution */ = {
 			isa = PBXGroup;
 			children = (
-				57455EF41964D01800482FD1 /* TKBAppDelegate.h */,
-				57455EF51964D01800482FD1 /* TKBAppDelegate.m */,
-				57455F1C1964EC5B00482FD1 /* Contoroller */,
+				E5226D801977F683003D7324 /* Library */,
+				E5226D8419780175003D7324 /* Content */,
 				57455F1B1964EC5400482FD1 /* Model */,
+				57455F1C1964EC5B00482FD1 /* Contoroller */,
 				57455F1A1964EC4200482FD1 /* View */,
 				57455EFD1964D01800482FD1 /* Images.xcassets */,
+				57455EF41964D01800482FD1 /* TKBAppDelegate.h */,
+				57455EF51964D01800482FD1 /* TKBAppDelegate.m */,
 				57455EEC1964D01800482FD1 /* Supporting Files */,
 			);
 			path = SimultanEquatSolution;
@@ -171,6 +184,8 @@
 		57455F1B1964EC5400482FD1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5748C59A1977AE1600996F15 /* TKBSimaltanEquatFormula.h */,
+				5748C59B1977AE1600996F15 /* TKBSimaltanEquatFormula.m */,
 				573F42A61967CB0500E350B9 /* TKBSEQuestion.h */,
 				573F42A71967CB0500E350B9 /* TKBSEQuestion.m */,
 			);
@@ -184,6 +199,28 @@
 				57455EFB1964D01800482FD1 /* TKBViewController.m */,
 			);
 			name = Contoroller;
+			sourceTree = "<group>";
+		};
+		E5226D801977F683003D7324 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				E5226D811977F6E1003D7324 /* TKBPopoverContext.h */,
+				E5226D821977F6E1003D7324 /* TKBPopoverContext.m */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		E5226D8419780175003D7324 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				E5226D8A19780856003D7324 /* TKBSESolveViewController.h */,
+				E5226D8B19780856003D7324 /* TKBSESolveViewController.m */,
+				E5226D8C19780856003D7324 /* TKBSESolveViewController.xib */,
+				E5226D8F1978086C003D7324 /* TKBSEAnswerViewController.h */,
+				E5226D901978086C003D7324 /* TKBSEAnswerViewController.m */,
+				E5226D911978086C003D7324 /* TKBSEAnswerViewController.xib */,
+			);
+			name = Content;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +305,8 @@
 			files = (
 				57455EFE1964D01800482FD1 /* Images.xcassets in Resources */,
 				57455EF01964D01800482FD1 /* InfoPlist.strings in Resources */,
+				E5226D931978086C003D7324 /* TKBSEAnswerViewController.xib in Resources */,
+				E5226D8E19780856003D7324 /* TKBSESolveViewController.xib in Resources */,
 				57455EF91964D01800482FD1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,9 +327,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				57455EF61964D01800482FD1 /* TKBAppDelegate.m in Sources */,
+				E5226D831977F6E1003D7324 /* TKBPopoverContext.m in Sources */,
 				573F42A81967CB0500E350B9 /* TKBSEQuestion.m in Sources */,
+				E5226D8D19780856003D7324 /* TKBSESolveViewController.m in Sources */,
 				5748C59C1977AE1600996F15 /* TKBSimaltanEquatFormula.m in Sources */,
 				57455EF21964D01800482FD1 /* main.m in Sources */,
+				E5226D921978086C003D7324 /* TKBSEAnswerViewController.m in Sources */,
 				57455EFC1964D01800482FD1 /* TKBViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
