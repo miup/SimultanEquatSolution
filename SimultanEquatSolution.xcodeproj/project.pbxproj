@@ -22,6 +22,7 @@
 		57455F071964D01800482FD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57455EE91964D01800482FD1 /* UIKit.framework */; };
 		57455F0F1964D01900482FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57455F0D1964D01900482FD1 /* InfoPlist.strings */; };
 		57455F111964D01900482FD1 /* SimultanEquatSolutionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57455F101964D01900482FD1 /* SimultanEquatSolutionTests.m */; };
+		5748C59C1977AE1600996F15 /* TKBSimaltanEquatFormula.m in Sources */ = {isa = PBXBuildFile; fileRef = 5748C59B1977AE1600996F15 /* TKBSimaltanEquatFormula.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		57455F0C1964D01900482FD1 /* SimultanEquatSolutionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimultanEquatSolutionTests-Info.plist"; sourceTree = "<group>"; };
 		57455F0E1964D01900482FD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		57455F101964D01900482FD1 /* SimultanEquatSolutionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimultanEquatSolutionTests.m; sourceTree = "<group>"; };
+		5748C59A1977AE1600996F15 /* TKBSimaltanEquatFormula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBSimaltanEquatFormula.h; sourceTree = "<group>"; };
+		5748C59B1977AE1600996F15 /* TKBSimaltanEquatFormula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBSimaltanEquatFormula.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 		57455ED91964D01800482FD1 = {
 			isa = PBXGroup;
 			children = (
+				5748C59A1977AE1600996F15 /* TKBSimaltanEquatFormula.h */,
+				5748C59B1977AE1600996F15 /* TKBSimaltanEquatFormula.m */,
 				57455EEB1964D01800482FD1 /* SimultanEquatSolution */,
 				57455F0A1964D01900482FD1 /* SimultanEquatSolutionTests */,
 				57455EE41964D01800482FD1 /* Frameworks */,
@@ -284,6 +289,7 @@
 			files = (
 				57455EF61964D01800482FD1 /* TKBAppDelegate.m in Sources */,
 				573F42A81967CB0500E350B9 /* TKBSEQuestion.m in Sources */,
+				5748C59C1977AE1600996F15 /* TKBSimaltanEquatFormula.m in Sources */,
 				57455EF21964D01800482FD1 /* main.m in Sources */,
 				57455EFC1964D01800482FD1 /* TKBViewController.m in Sources */,
 			);

@@ -7,18 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TKBSimaltanEquatFormula.h"
 
 @interface TKBSEQuestion : NSObject
 
-@property NSInteger x1Coefficient;
-@property NSInteger y1Coefficient;
-@property NSInteger constant1;
-@property NSInteger x2Coefficient;
-@property NSInteger y2Coefficient;
-@property NSInteger constant2;
+@property TKBSimaltanEquatFormula *se1;
+@property TKBSimaltanEquatFormula *se2;
+
 @property NSInteger solutionX;
 @property NSInteger solutionY;
-
 
 + (TKBSEQuestion *)SEQuestionWithMaxCoefficient:(NSInteger)maxCoefficient allowFraction:(BOOL)allowFraction;
 
@@ -27,5 +24,5 @@
 - (void)display;
 
 
-- (void)multipleFormulaWithNumberOfFormula:(NSUInteger)numberOfFormula multipleNumber:(NSUInteger)multipleNumber;
+- (NSDictionary *)multipleFormulaWithNumberOfFormula:(NSUInteger)numberOfFormula multipleNumber:(NSUInteger)multipleNumber;
 @end

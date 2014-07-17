@@ -27,6 +27,10 @@
     [seq display];
     _simaltanEquation1Label.text = [seq toStringWithNumberOfFormula:1];
     _simaltanEquation2Label.text = [seq toStringWithNumberOfFormula:2];
+
+    NSLog(@"%@", seq.se1);
+//    NSDictionary *multipledFormula = [seq multipleFormulaWithNumberOfFormula:1 multipleNumber:2];
+//    NSLog(@"%@", multipledFormula);
 }
 
 - (void)didReceiveMemoryWarning
