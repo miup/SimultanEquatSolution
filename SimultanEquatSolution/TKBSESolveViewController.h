@@ -14,6 +14,7 @@
 @interface TKBSESolveViewController : UIViewController
 
 @property (nonatomic, weak) id <TKBSESolveViewControllerDelegate> delegate;
+@property NSString *formulaString;
 
 @end
 

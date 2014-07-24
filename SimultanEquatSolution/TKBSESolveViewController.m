@@ -131,6 +131,7 @@
         default:
             break;
     }
+    _formulaString = _formulaLabel.text;
 }
 
 - (void)setButtonTitle:(UIButton *)button

@@ -11,6 +11,7 @@
 #import "TKBPopoverContext.h"
 #import "TKBSESolveViewController.h"
 #import "TKBSEAnswerViewController.h"
+#import "TKBFormulaStringParser.h"
 
 @interface TKBViewController () <TKBSESolveViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *simaltanEquation1Label;
@@ -42,14 +43,14 @@
 {
     //加減法用のポップオーバーの表示
     TKBSESolveViewController *contentViewController = [[TKBSESolveViewController alloc] initWithNibName:NSStringFromClass([TKBSESolveViewController class])
-                                                                                bundle:[NSBundle mainBundle]];
+                                                                                                 bundle:[NSBundle mainBundle]];
     contentViewController.delegate = self;
     
     [_solvePopoverContect presentPopoverWithContentViewController:contentViewController
-                                                        fromRect:((UIButton *)sender).frame
-                                                          inView:self.view
-                                        permittedArrowDirections:UIPopoverArrowDirectionDown
-                                                        animated:YES];
+                                                         fromRect:((UIButton *)sender).frame
+                                                           inView:self.view
+                                         permittedArrowDirections:UIPopoverArrowDirectionDown
+                                                         animated:YES];
 }
 
 - (IBAction)didTapAnswerButton:(id)sender
@@ -68,8 +69,10 @@
 
 - (void)didTappetReturnButton:(TKBSESolveViewController *)vc
 {
-    NSLog(@"hoge");
+    TKBFormulaStringParser *parser = [[TKBFormulaStringParser alloc] init];
+    [parser parseWithFormulaString:vc.formulaString];
     [_solvePopoverContect dismissAllPopoversAnimated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning
