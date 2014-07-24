@@ -62,11 +62,11 @@
 {
     switch (numberOfFormula) {
         case 1:
-            if (_se1.yCoefficient < 0) return [NSString stringWithFormat:@"%ldx %ldy = %ld", _se1.xCoefficient, _se1.yCoefficient, _se1.constant];
+            if (_se1.yCoefficient < 0) return [NSString stringWithFormat:@"%ldx - %ldy = %ld", _se1.xCoefficient, -_se1.yCoefficient, _se1.constant];
             else                    return [NSString stringWithFormat:@"%ldx + %ldy = %ld", _se1.xCoefficient, _se1.yCoefficient, _se1.constant];
             break;
         case 2:
-            if (_se2.yCoefficient < 0) return [NSString stringWithFormat:@"%ldx %ldy = %ld", _se2.xCoefficient, _se2.yCoefficient, _se2.constant];
+            if (_se2.yCoefficient < 0) return [NSString stringWithFormat:@"%ldx - %ldy = %ld", _se2.xCoefficient, -_se2.yCoefficient, _se2.constant];
             else                    return [NSString stringWithFormat:@"%ldx + %ldy = %ld", _se2.xCoefficient, _se2.yCoefficient, _se2.constant];
             break;
         default:
@@ -91,13 +91,39 @@
     return delta == 0 ? TRUE : FALSE;
 }
 
-- (TKBSimaltanEquatFormula *)multipleFormulaWithNumberOfFormula:(NSUInteger)numberOfFormula multipleNumber:(NSUInteger)multipleNumber
+
+- (TKBSimaltanEquatFormula *)calcAddSubWithParser:(TKBFormulaStringParser *)parser
 {
-    TKBSimaltanEquatFormula *retval = [[TKBSimaltanEquatFormula alloc] init];
+    TKBSimaltanEquatFormula *retFormula = [[TKBSimaltanEquatFormula alloc] init];
+    if (parser.firstFormula == 1) {
+        TKBSimaltanEquatFormula *first  = [self.se1 multipleFormulaWithMultipleNumber:parser.firstCoefficient];
+        TKBSimaltanEquatFormula *second = [self.se2 multipleFormulaWithMultipleNumber:parser.secondCoefficient];
+        if (parser.addOrSubstruct == addOrSubtractAdd)
+            [retFormula setXCoefficient:first.xCoefficient + second.xCoefficient
+                           yCoefficient:first.yCoefficient + second.yCoefficient
+                               constant:first.constant + second.constant];
+        else
+            [retFormula setXCoefficient:first.xCoefficient - second.xCoefficient
+                           yCoefficient:first.yCoefficient - second.yCoefficient
+                               constant:first.constant - second.constant];
+        
+    } else {
+        TKBSimaltanEquatFormula *first  = [self.se2 multipleFormulaWithMultipleNumber:parser.firstCoefficient];
+        TKBSimaltanEquatFormula *second = [self.se1 multipleFormulaWithMultipleNumber:parser.secondCoefficient];
+        if (parser.addOrSubstruct == addOrSubtractAdd)
+            [retFormula setXCoefficient:first.xCoefficient + second.xCoefficient
+                           yCoefficient:first.yCoefficient + second.yCoefficient
+                               constant:first.constant + second.constant];
+        else
+            [retFormula setXCoefficient:first.xCoefficient - second.xCoefficient
+                           yCoefficient:first.yCoefficient - second.yCoefficient
+                               constant:first.constant - second.constant];
+        
+    }
+    return retFormula;
     
-    
-    return retval;
 }
+
 
 
 @end

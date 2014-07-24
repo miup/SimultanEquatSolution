@@ -9,13 +9,14 @@
 #import <Foundation/Foundation.h>
 
 typedef enum addOrSubtract {
-    addOrSubtractAdd = 0,
-    addOrSubtractSubstruct
+    addOrSubtractAdd = 1,
+    addOrSubtractSubstruct = -1
 } addOrSubtract;
 
 @interface TKBFormulaStringParser : NSObject
 
 - (void)parseWithFormulaString:(NSString *)formulaString;
+- (void)display;
 
 @property NSInteger firstFormula;
 @property NSInteger secondFormula;

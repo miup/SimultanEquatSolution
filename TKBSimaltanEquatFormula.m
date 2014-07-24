@@ -28,7 +28,14 @@
     return form;
 }
 
-
+- (NSString *)toString
+{
+    if (_xCoefficient == 0) return [NSString stringWithFormat:@"       %ldy = %ld", _yCoefficient, _constant];
+    if (_yCoefficient == 0) return [NSString stringWithFormat:@"%ldx        = %ld", _xCoefficient, _constant];
+    
+    if (_yCoefficient < 0)  return [NSString stringWithFormat:@"%ldx - %ldy = %ld", _xCoefficient, -_yCoefficient, _constant];
+    else                    return [NSString stringWithFormat:@"%ldx + %ldy = %ld", _xCoefficient, _yCoefficient, _constant];
+}
 
 - (void)display
 {

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TKBSimaltanEquatFormula.h"
+#import "TKBFormulaStringParser.h"
 
 @interface TKBSEQuestion : NSObject
 
@@ -23,6 +24,5 @@
 
 - (void)display;
 
-
-- (NSDictionary *)multipleFormulaWithNumberOfFormula:(NSUInteger)numberOfFormula multipleNumber:(NSUInteger)multipleNumber;
+- (TKBSimaltanEquatFormula *)calcAddSubWithParser:(TKBFormulaStringParser *)parser;
 @end
