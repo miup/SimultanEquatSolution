@@ -79,7 +79,11 @@
 
 - (void)tappedButton:(UIButton *)button
 {
+    NSString *lastChar = @"";
+    if (![_formulaLabel.text isEqualToString:@""]) lastChar = [_formulaLabel.text substringWithRange:NSMakeRange(_formulaLabel.text.length -1, 1)];
     switch (button.tag) {
+    
+        //数字ボタン
         case 41:
         case 42:
         case 43:
@@ -89,22 +93,40 @@
         case 21:
         case 22:
         case 23:
+            if (![lastChar isNumberOfFormula])
+                _formulaLabel.text = [_formulaLabel.text stringByAppendingString:button.titleLabel.text];
+            break;
+            
+        //演算子ボタン
         case 11:
         case 12:
         case 13:
-            _formulaLabel.text = [_formulaLabel.text stringByAppendingString:button.titleLabel.text];
+            if (![_formulaLabel.text isEqualToString:@""] && ([lastChar isDigit] || [lastChar isNumberOfFormula]))
+                _formulaLabel.text = [_formulaLabel.text stringByAppendingString:button.titleLabel.text];
             break;
+            
+        //数式番号ボタン
         case 14:
-            _formulaLabel.text = [_formulaLabel.text stringByAppendingString:@"①"];
+            if(![lastChar isNumberOfFormula] && ![lastChar isDigit])
+                 _formulaLabel.text = [_formulaLabel.text stringByAppendingString:@"①"];
             break;
         case 34:
-            _formulaLabel.text = [_formulaLabel.text stringByAppendingString:@"②"];
+            if(![lastChar isNumberOfFormula] && ![lastChar isDigit])
+                _formulaLabel.text = [_formulaLabel.text stringByAppendingString:@"②"];
             break;
+        
+        //AC
         case 15:
             _formulaLabel.text = @"";
             break;
+            
+        //C
         case 25:
             if (![_formulaLabel.text isEqualToString:@""]) _formulaLabel.text = [_formulaLabel.text substringWithRange:NSMakeRange(0, _formulaLabel.text.length -1)];
+            break;
+        //return
+        case 35:
+            [self didTappedReturnBtton];
             break;
         default:
             break;
@@ -173,6 +195,14 @@
     }
     
 }
+
+- (void)didTappedReturnBtton
+{
+    if ([self.delegate respondsToSelector:@selector(didTappetReturnButton:)]) {
+        [self.delegate didTappetReturnButton:self];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {

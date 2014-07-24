@@ -12,20 +12,23 @@
 #import "TKBSESolveViewController.h"
 #import "TKBSEAnswerViewController.h"
 
-@interface TKBViewController ()
+@interface TKBViewController () <TKBSESolveViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *simaltanEquation1Label;
 @property (weak, nonatomic) IBOutlet UILabel *simaltanEquation2Label;
 
 @end
 
 @implementation TKBViewController {
-    
+    TKBPopoverContext *_answerPopoverContect;
+    TKBPopoverContext *_solvePopoverContect;
 }
  
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    _answerPopoverContect = [TKBPopoverContext sharedPopoverContext];
+    _solvePopoverContect  = [TKBPopoverContext sharedPopoverContext];
     TKBSEQuestion *seq = [TKBSEQuestion SEQuestionWithMaxCoefficient:6 allowFraction:NO];
     [seq display];
     _simaltanEquation1Label.text = [seq toStringWithNumberOfFormula:1];
@@ -38,25 +41,35 @@
 - (IBAction)didTapSolveButton:(id)sender
 {
     //加減法用のポップオーバーの表示
-    TKBPopoverContext *solvePopoverContext = [TKBPopoverContext sharedPopoverContext];
-    [solvePopoverContext presentPopoverWithContentViewController:[[TKBSESolveViewController alloc] initWithNibName:NSStringFromClass([TKBSESolveViewController class]) bundle:[NSBundle mainBundle]]
-                                                                                                          fromRect:((UIButton *)sender).frame
-                                                                                                            inView:self.view
-                                                                                          permittedArrowDirections:UIPopoverArrowDirectionDown
-                                                                                                          animated:YES];
+    TKBSESolveViewController *contentViewController = [[TKBSESolveViewController alloc] initWithNibName:NSStringFromClass([TKBSESolveViewController class])
+                                                                                bundle:[NSBundle mainBundle]];
+    contentViewController.delegate = self;
+    
+    [_solvePopoverContect presentPopoverWithContentViewController:contentViewController
+                                                        fromRect:((UIButton *)sender).frame
+                                                          inView:self.view
+                                        permittedArrowDirections:UIPopoverArrowDirectionDown
+                                                        animated:YES];
 }
 
 - (IBAction)didTapAnswerButton:(id)sender
 {
     //解答用のポップオーバーの表示
-    TKBPopoverContext *answerPopoverContect = [TKBPopoverContext sharedPopoverContext];
-    [answerPopoverContect presentPopoverWithContentViewController:[[TKBSEAnswerViewController alloc] initWithNibName:NSStringFromClass([TKBSEAnswerViewController class]) bundle:[NSBundle mainBundle]]
-                                                                                                            fromRect:((UIButton *)sender).frame
-                                                                                                              inView:self.view
-                                                                                            permittedArrowDirections:UIPopoverArrowDirectionDown
-                                                                                                            animated:YES];
+    TKBSEAnswerViewController *contentViewController = [[TKBSEAnswerViewController alloc] initWithNibName:NSStringFromClass([TKBSEAnswerViewController class])
+                                                                                                   bundle:[NSBundle mainBundle]];
+    [_answerPopoverContect presentPopoverWithContentViewController:contentViewController
+                                                          fromRect:((UIButton *)sender).frame
+                                                            inView:self.view
+                                          permittedArrowDirections:UIPopoverArrowDirectionDown
+                                                          animated:YES];
     
     
+}
+
+- (void)didTappetReturnButton:(TKBSESolveViewController *)vc
+{
+    NSLog(@"hoge");
+    [_solvePopoverContect dismissAllPopoversAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

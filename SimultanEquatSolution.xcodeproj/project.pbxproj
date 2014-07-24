@@ -23,6 +23,8 @@
 		57455F0F1964D01900482FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57455F0D1964D01900482FD1 /* InfoPlist.strings */; };
 		57455F111964D01900482FD1 /* SimultanEquatSolutionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57455F101964D01900482FD1 /* SimultanEquatSolutionTests.m */; };
 		5748C59C1977AE1600996F15 /* TKBSimaltanEquatFormula.m in Sources */ = {isa = PBXBuildFile; fileRef = 5748C59B1977AE1600996F15 /* TKBSimaltanEquatFormula.m */; };
+		57708EA81980CF65008ABF81 /* NSString+isConsistSpecificString.m in Sources */ = {isa = PBXBuildFile; fileRef = 57708EA71980CF65008ABF81 /* NSString+isConsistSpecificString.m */; };
+		57708EAB1980DE06008ABF81 /* TKBFormulaStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 57708EAA1980DE06008ABF81 /* TKBFormulaStringParser.m */; };
 		E5226D831977F6E1003D7324 /* TKBPopoverContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E5226D821977F6E1003D7324 /* TKBPopoverContext.m */; };
 		E5226D8D19780856003D7324 /* TKBSESolveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5226D8B19780856003D7324 /* TKBSESolveViewController.m */; };
 		E5226D8E19780856003D7324 /* TKBSESolveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5226D8C19780856003D7324 /* TKBSESolveViewController.xib */; };
@@ -64,6 +66,10 @@
 		57455F101964D01900482FD1 /* SimultanEquatSolutionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimultanEquatSolutionTests.m; sourceTree = "<group>"; };
 		5748C59A1977AE1600996F15 /* TKBSimaltanEquatFormula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKBSimaltanEquatFormula.h; path = ../TKBSimaltanEquatFormula.h; sourceTree = "<group>"; };
 		5748C59B1977AE1600996F15 /* TKBSimaltanEquatFormula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKBSimaltanEquatFormula.m; path = ../TKBSimaltanEquatFormula.m; sourceTree = "<group>"; };
+		57708EA61980CF65008ABF81 /* NSString+isConsistSpecificString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+isConsistSpecificString.h"; sourceTree = "<group>"; };
+		57708EA71980CF65008ABF81 /* NSString+isConsistSpecificString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+isConsistSpecificString.m"; sourceTree = "<group>"; };
+		57708EA91980DE06008ABF81 /* TKBFormulaStringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBFormulaStringParser.h; sourceTree = "<group>"; };
+		57708EAA1980DE06008ABF81 /* TKBFormulaStringParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBFormulaStringParser.m; sourceTree = "<group>"; };
 		E5226D811977F6E1003D7324 /* TKBPopoverContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBPopoverContext.h; sourceTree = "<group>"; };
 		E5226D821977F6E1003D7324 /* TKBPopoverContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBPopoverContext.m; sourceTree = "<group>"; };
 		E5226D8A19780856003D7324 /* TKBSESolveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBSESolveViewController.h; sourceTree = "<group>"; };
@@ -184,6 +190,8 @@
 		57455F1B1964EC5400482FD1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				57708EA91980DE06008ABF81 /* TKBFormulaStringParser.h */,
+				57708EAA1980DE06008ABF81 /* TKBFormulaStringParser.m */,
 				5748C59A1977AE1600996F15 /* TKBSimaltanEquatFormula.h */,
 				5748C59B1977AE1600996F15 /* TKBSimaltanEquatFormula.m */,
 				573F42A61967CB0500E350B9 /* TKBSEQuestion.h */,
@@ -206,6 +214,8 @@
 			children = (
 				E5226D811977F6E1003D7324 /* TKBPopoverContext.h */,
 				E5226D821977F6E1003D7324 /* TKBPopoverContext.m */,
+				57708EA61980CF65008ABF81 /* NSString+isConsistSpecificString.h */,
+				57708EA71980CF65008ABF81 /* NSString+isConsistSpecificString.m */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -328,12 +338,14 @@
 			files = (
 				57455EF61964D01800482FD1 /* TKBAppDelegate.m in Sources */,
 				E5226D831977F6E1003D7324 /* TKBPopoverContext.m in Sources */,
+				57708EAB1980DE06008ABF81 /* TKBFormulaStringParser.m in Sources */,
 				573F42A81967CB0500E350B9 /* TKBSEQuestion.m in Sources */,
 				E5226D8D19780856003D7324 /* TKBSESolveViewController.m in Sources */,
 				5748C59C1977AE1600996F15 /* TKBSimaltanEquatFormula.m in Sources */,
 				57455EF21964D01800482FD1 /* main.m in Sources */,
 				E5226D921978086C003D7324 /* TKBSEAnswerViewController.m in Sources */,
 				57455EFC1964D01800482FD1 /* TKBViewController.m in Sources */,
+				57708EA81980CF65008ABF81 /* NSString+isConsistSpecificString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
