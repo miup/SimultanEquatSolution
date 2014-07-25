@@ -260,6 +260,8 @@
                 errorLabel.numberOfLines = 2;
                 errorLabel.font = [UIFont systemFontOfSize:20];
                 [_columnCalcView1 addSubview:errorLabel];
+                NSNumber *num = [NSNumber numberWithInteger:[_occupiedOrder[[self searchMaxValueIndex:_occupiedOrder]] integerValue] + 1];
+                _occupiedOrder[0] = num;
             }
                 break;
                 
@@ -271,6 +273,8 @@
                 errorLabel.numberOfLines = 2;
                 errorLabel.font = [UIFont systemFontOfSize:20];
                 [_columnCalcView2 addSubview:errorLabel];
+                NSNumber *num = [NSNumber numberWithInteger:[_occupiedOrder[[self searchMaxValueIndex:_occupiedOrder]] integerValue] + 1];
+                _occupiedOrder[1] = num;
             }
                 break;
             default:
