@@ -36,7 +36,7 @@
     TKBPopoverContext *_answerPopoverContect;
     TKBPopoverContext *_solvePopoverContect;
     TKBSEQuestion *_seq;
-    NSArray *_occupiedOrder;
+    NSMutableArray *_occupiedOrder;
 }
 
  
@@ -50,7 +50,7 @@
 
 - (void)prepareView
 {
-    _occupiedOrder = @[@0, @0, @0, @0];
+    _occupiedOrder = [@[@0, @0, @0, @0] mutableCopy];
     _curSubstitutionLabelNum = 1;
     _isColumnCalc = YES;
     _correctOrNotLabel.text = @"";
@@ -119,13 +119,24 @@
     if ([_xValueButton.titleLabel.text isInteger]) {
         switch (_curSubstitutionLabelNum) {
             case 1:
+            {
                 _substitutionLabel.text = [_seq.se1 toStringSubstitutionToVarIsX:YES substituteNumber:[_xValueButton.titleLabel.text integerValue]];
                 _curSubstitutionLabelNum = 2;
+                NSNumber *num = [NSNumber numberWithInteger:[_occupiedOrder[[self searchMaxValueIndex:_occupiedOrder]] integerValue] + 1];
+                _occupiedOrder[2] = num;
+                NSLog(@"%@", num);
+            }
                 break;
                 
             case 2:
+            {
                 _substitutionLabel2.text = [_seq.se1 toStringSubstitutionToVarIsX:YES substituteNumber:[_xValueButton.titleLabel.text integerValue]];
                 _curSubstitutionLabelNum = 1;
+                NSNumber *num = [NSNumber numberWithInteger:[_occupiedOrder[[self searchMaxValueIndex:_occupiedOrder]] integerValue] + 1];
+                _occupiedOrder[3] = num;
+                NSLog(@"%@", num);
+            }
+                break;
             default:
                 break;
         }
@@ -139,13 +150,24 @@
     if ([_yValueButton.titleLabel.text isInteger]) {
         switch (_curSubstitutionLabelNum) {
             case 1:
+            {
                 _substitutionLabel.text = [_seq.se1 toStringSubstitutionToVarIsX:NO substituteNumber:[_yValueButton.titleLabel.text integerValue]];
                 _curSubstitutionLabelNum = 2;
+                NSNumber *num = [NSNumber numberWithInteger:[_occupiedOrder[[self searchMaxValueIndex:_occupiedOrder]] integerValue] + 1];
+                _occupiedOrder[2] = num;
+                NSLog(@"%@", num);
+            }
                 break;
                 
             case 2:
+            {
                 _substitutionLabel2.text = [_seq.se1 toStringSubstitutionToVarIsX:NO substituteNumber:[_yValueButton.titleLabel.text integerValue]];
                 _curSubstitutionLabelNum = 1;
+                NSNumber *num = [NSNumber numberWithInteger:[_occupiedOrder[[self searchMaxValueIndex:_occupiedOrder]] integerValue] + 1];
+                _occupiedOrder[3] = num;
+                NSLog(@"%@", num);
+            }
+                break;
             default:
                 break;
         }
@@ -161,43 +183,36 @@
 }
 
 - (IBAction)didTapBackButton:(id)sender {
-    NSLog(@"%@", [_columnCalcView2.subviews firstObject]);
-    if (_isColumnCalc) {
-        switch (_curViewNumber) {
-            case 1:
-                if ([_columnCalcView2.subviews count] != 0) {
-                    [[_columnCalcView2.subviews firstObject] removeFromSuperview];
-                    _curViewNumber = 2;
-                }
-                break;
-                
-            case 2:
-                [[_columnCalcView1.subviews firstObject] removeFromSuperview];
-                _curViewNumber = 1;
-                break;
-            default:
-                break;
-        }
-    } else {
-        switch (_curSubstitutionLabelNum) {
-            case 1:
-                if (![_substitutionLabel2.text isEqualToString:@""]) {
-                    _substitutionLabel2.text = @"";
-                    _curSubstitutionLabelNum = 2;
-                }
-                break;
-                
+    NSLog(@"%@", [_occupiedOrder description]);
+    int index = [self searchMaxValueIndex:_occupiedOrder];
+    NSLog(@"%d", index);
+    switch (index) {
+        case 0:
+            [[_columnCalcView1.subviews firstObject] removeFromSuperview];
+            _curViewNumber = 1;
+
+            break;
+            
+        case 1:
+            [[_columnCalcView2.subviews firstObject] removeFromSuperview];
+            _curViewNumber = 2;
+            break;
+            
             case 2:
                 _substitutionLabel.text = @"";
                 _curSubstitutionLabelNum = 1;
-                
-            default:
-                break;
-        }
-        
-        
+            break;
+            
+        case 3:
+            _substitutionLabel2.text = @"";
+            _curSubstitutionLabelNum = 2;
+            break;
+            
+        default:
+            break;
     }
     
+    _occupiedOrder[index] = [NSNumber numberWithInteger:0];
     
 }
 
@@ -285,9 +300,15 @@
     if (viewNumber == 1) {
         [_columnCalcView1 addSubview:colmnCalcView];
         _curViewNumber = 2;
+        NSNumber *num = [NSNumber numberWithInteger:[_occupiedOrder[[self searchMaxValueIndex:_occupiedOrder]] integerValue] + 1];
+        _occupiedOrder[0] = num;
+        NSLog(@"%@", num);
     } else {
         [_columnCalcView2 addSubview:colmnCalcView];
         _curViewNumber = 1;
+        NSNumber *num = [NSNumber numberWithInteger:[_occupiedOrder[[self searchMaxValueIndex:_occupiedOrder]] integerValue] + 1];
+        _occupiedOrder[1] = num;
+        NSLog(@"%@", num);
     }
     
     _isColumnCalc = YES;
@@ -300,6 +321,15 @@
     
 }
 
+- (int)searchMaxValueIndex:(NSMutableArray *)arr
+{
+    NSLog(@"%@", [arr description]);
+    int index = 0;
+    for (int i = 0; i < [arr count]; i++) {
+        index = [arr[index] integerValue] < [(NSNumber *)(arr[i]) integerValue] ? i : index;
+    }
+    return index;
+}
 
 
 - (void)didReceiveMemoryWarning
