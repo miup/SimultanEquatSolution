@@ -25,8 +25,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *yValueButton;
 @property (weak, nonatomic) IBOutlet UIButton *xSubstituteButton;
 @property (weak, nonatomic) IBOutlet UIButton *ySubstituteButton;
+@property (weak, nonatomic) IBOutlet UILabel *correctOrNotLabel;
+@property BOOL isColumnCalc;
 @property NSInteger curViewNumber;
-
+@property NSInteger curSubstitutionLabelNum;
 @end
 
 @implementation TKBViewController {
@@ -45,6 +47,9 @@
 
 - (void)prepareView
 {
+    _curSubstitutionLabelNum = 1;
+    _isColumnCalc = YES;
+    _correctOrNotLabel.text = @"";
     [_xValueButton setTitle:@"" forState:UIControlStateNormal];
     [_yValueButton setTitle:@"" forState:UIControlStateNormal];
     [_xValueButton.titleLabel setFont:[UIFont systemFontOfSize:40]];
@@ -106,22 +111,97 @@
 }
 
 - (IBAction)didTapXSubstituteButton:(id)sender {
+    
     if ([_xValueButton.titleLabel.text isInteger]) {
-        _substitutionLabel.text = [_seq.se1 toStringSubstitutionToVarIsX:YES substituteNumber:[_xValueButton.titleLabel.text integerValue]];
+        switch (_curSubstitutionLabelNum) {
+            case 1:
+                _substitutionLabel.text = [_seq.se1 toStringSubstitutionToVarIsX:YES substituteNumber:[_xValueButton.titleLabel.text integerValue]];
+                _curSubstitutionLabelNum = 2;
+                break;
+                
+            case 2:
+                _substitutionLabel2.text = [_seq.se1 toStringSubstitutionToVarIsX:YES substituteNumber:[_xValueButton.titleLabel.text integerValue]];
+                _curSubstitutionLabelNum = 1;
+            default:
+                break;
+        }
+        _isColumnCalc = NO;
     }
+    
     
 }
 
 - (IBAction)didTapYSubstituteButton:(id)sender {
     if ([_yValueButton.titleLabel.text isInteger]) {
-        _substitutionLabel.text = [_seq.se1 toStringSubstitutionToVarIsX:NO substituteNumber:[_yValueButton.titleLabel.text integerValue]];
+        switch (_curSubstitutionLabelNum) {
+            case 1:
+                _substitutionLabel.text = [_seq.se1 toStringSubstitutionToVarIsX:NO substituteNumber:[_yValueButton.titleLabel.text integerValue]];
+                _curSubstitutionLabelNum = 2;
+                break;
+                
+            case 2:
+                _substitutionLabel2.text = [_seq.se1 toStringSubstitutionToVarIsX:NO substituteNumber:[_yValueButton.titleLabel.text integerValue]];
+                _curSubstitutionLabelNum = 1;
+            default:
+                break;
+        }
+        _isColumnCalc = NO;
     }
 }
 
 - (IBAction)didTapAnswerButton:(id)sender {
+    if ([_xValueButton.titleLabel.text integerValue] == _seq.solutionX && [_yValueButton.titleLabel.text integerValue] == _seq.solutionY)
+        _correctOrNotLabel.text = @"O";
+    else
+        _correctOrNotLabel.text = @"X";
+}
+
+- (IBAction)didTapBackButton:(id)sender {
+    NSLog(@"%@", [_columnCalcView2.subviews firstObject]);
+    if (_isColumnCalc) {
+        switch (_curViewNumber) {
+            case 1:
+                if ([_columnCalcView2.subviews count] != 0) {
+                    [[_columnCalcView2.subviews firstObject] removeFromSuperview];
+                    _curViewNumber = 2;
+                }
+                break;
+                
+            case 2:
+                [[_columnCalcView1.subviews firstObject] removeFromSuperview];
+                _curViewNumber = 1;
+                break;
+            default:
+                break;
+        }
+    } else {
+        switch (_curSubstitutionLabelNum) {
+            case 1:
+                if (![_substitutionLabel2.text isEqualToString:@""]) {
+                    _substitutionLabel2.text = @"";
+                    _curSubstitutionLabelNum = 2;
+                }
+                break;
+                
+            case 2:
+                _substitutionLabel.text = @"";
+                _curSubstitutionLabelNum = 1;
+                
+            default:
+                break;
+        }
+        
+        
+    }
+    
+    
 }
 
 - (IBAction)didTapNextButton:(id)sender {
+    _seq = [TKBSEQuestion SEQuestionWithMaxCoefficient:6 allowFraction:NO];
+    [self prepareView];
+    [[_columnCalcView1.subviews firstObject] removeFromSuperview];
+    [[_columnCalcView2.subviews firstObject] removeFromSuperview];
 }
 
 
@@ -152,6 +232,16 @@
             }
                 break;
                 
+            case 2:
+            {
+                UILabel *errorLabel = [[UILabel alloc] initWithFrame:_columnCalcView1.bounds];
+                errorLabel.textAlignment = NSTextAlignmentCenter;
+                errorLabel.text = [NSString stringWithFormat:@"エラー:①×(数字) (+or-) ②×(数字)\nのような形で入力してください"];
+                errorLabel.numberOfLines = 2;
+                errorLabel.font = [UIFont systemFontOfSize:20];
+                [_columnCalcView2 addSubview:errorLabel];
+            }
+                break;
             default:
                 break;
         }
@@ -178,9 +268,13 @@
     
     if (viewNumber == 1) {
         [_columnCalcView1 addSubview:colmnCalcView];
+        _curViewNumber = 2;
+    } else {
+        [_columnCalcView2 addSubview:colmnCalcView];
+        _curViewNumber = 1;
     }
     
-    
+    _isColumnCalc = YES;
 }
 
 - (void)dismissViewController:(TKBSEAnswerViewController *)vc
