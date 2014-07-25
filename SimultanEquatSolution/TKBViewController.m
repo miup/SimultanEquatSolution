@@ -31,11 +31,14 @@
 @property NSInteger curSubstitutionLabelNum;
 @end
 
+
 @implementation TKBViewController {
     TKBPopoverContext *_answerPopoverContect;
     TKBPopoverContext *_solvePopoverContect;
     TKBSEQuestion *_seq;
+    NSArray *_occupiedOrder;
 }
+
  
 - (void)viewDidLoad
 {
@@ -47,6 +50,7 @@
 
 - (void)prepareView
 {
+    _occupiedOrder = @[@0, @0, @0, @0];
     _curSubstitutionLabelNum = 1;
     _isColumnCalc = YES;
     _correctOrNotLabel.text = @"";
@@ -219,6 +223,18 @@
 
 - (void)drawColmnCalcViewWithViewNumber:(NSInteger)viewNumber parser:(TKBFormulaStringParser *)parser
 {
+    switch (viewNumber) {
+        case 1:
+            [[[_columnCalcView1 subviews] firstObject] removeFromSuperview];
+            break;
+            
+        case 2:
+            [[[_columnCalcView2 subviews] firstObject] removeFromSuperview];
+            break;
+            
+        default:
+            break;
+    }
     if (!parser.complete) {
         switch (viewNumber) {
             case 1:
