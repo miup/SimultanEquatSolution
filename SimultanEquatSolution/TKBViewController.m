@@ -91,6 +91,24 @@
 
 - (void)drawColmnCalcViewWithViewNumber:(NSInteger)viewNumber parser:(TKBFormulaStringParser *)parser
 {
+    if (!parser.complete) {
+        switch (viewNumber) {
+            case 1:
+            {
+                UILabel *errorLabel = [[UILabel alloc] initWithFrame:_columnCalcView1.bounds];
+                errorLabel.textAlignment = NSTextAlignmentCenter;
+                errorLabel.text = [NSString stringWithFormat:@"エラー:①×(数字) (+or-) ②×(数字)\nのような形で入力してください"];
+                errorLabel.numberOfLines = 2;
+                errorLabel.font = [UIFont systemFontOfSize:20];
+                [_columnCalcView1 addSubview:errorLabel];
+            }
+                break;
+                
+            default:
+                break;
+        }
+        return;
+    }
     TKBSEColumnCalcView *colmnCalcView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([TKBSEColumnCalcView class]) owner:self options:nil] firstObject];
     TKBSimaltanEquatFormula *first = [[TKBSimaltanEquatFormula alloc] init];
     TKBSimaltanEquatFormula *second = [[TKBSimaltanEquatFormula alloc] init];
