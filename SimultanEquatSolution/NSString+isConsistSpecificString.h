@@ -16,4 +16,6 @@
 - (BOOL)consistsOf:(NSCharacterSet *)characterSet;
 
 - (BOOL)isNumberOfFormula;
+
+- (BOOL)isInteger;
 @end

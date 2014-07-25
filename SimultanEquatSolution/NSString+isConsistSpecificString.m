@@ -36,4 +36,12 @@
     return [digitCharSet isSupersetOfSet:aCharacterSet];
 }
 
+-(BOOL)isInteger
+{
+    if ([self isEqualToString:@""]) return NO;
+    NSCharacterSet *digitCharSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789-"];
+    NSCharacterSet *aCharacterSet = [NSCharacterSet characterSetWithCharactersInString:self];
+    return [digitCharSet isSupersetOfSet:aCharacterSet];
+}
+
 @end

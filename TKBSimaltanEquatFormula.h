@@ -18,4 +18,6 @@
 - (TKBSimaltanEquatFormula *)multipleFormulaWithMultipleNumber:(NSInteger)multipleNumber;
 - (void)display;
 - (NSString *)toString;
+- (NSString *)toStringSubstitutionToVarIsX:(BOOL) isX substituteNumber:(NSInteger)substituteNumber;
+
 @end

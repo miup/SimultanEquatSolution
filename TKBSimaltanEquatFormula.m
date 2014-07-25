@@ -42,4 +42,16 @@
     NSLog(@"%ldx + %ldy = %ld", _xCoefficient, _yCoefficient, _constant);
 }
 
+
+- (NSString *)toStringSubstitutionToVarIsX:(BOOL)isX substituteNumber:(NSInteger)substituteNumber
+{
+    if (isX) {
+        if (_yCoefficient < 0)  return [NSString stringWithFormat:@"%ld - %ldy = %ld", _xCoefficient * substituteNumber, -_yCoefficient, _constant];
+        else                    return [NSString stringWithFormat:@"%ld + %ldy = %ld", _xCoefficient *substituteNumber, _yCoefficient, _constant];
+    } else {
+        if (_yCoefficient * substituteNumber < 0)  return [NSString stringWithFormat:@"%ldx - %ld = %ld", _xCoefficient, -_yCoefficient * substituteNumber, _constant];
+        else                                       return [NSString stringWithFormat:@"%ldx + %ld = %ld", _xCoefficient, _yCoefficient * substituteNumber, _constant];
+    }
+}
+
 @end

@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TKBSEAnswerViewControllerDelegate;
+
+
 @interface TKBSEAnswerViewController : UIViewController
+
+@property (weak, nonatomic) id <TKBSEAnswerViewControllerDelegate> delegate;
+@property NSString *answer;
+@property BOOL isX;
+
+@end
+
+
+@protocol TKBSEAnswerViewControllerDelegate <NSObject>
+
+- (void)dismissViewController:(TKBSEAnswerViewController *)vc;
 
 @end

@@ -39,7 +39,7 @@
 
 - (void)prepareViews
 {
-    _margin = 10;
+    _margin = 15;
     _buttonsColumn = 5;
     _buttonsRow    = 4;
     
@@ -52,18 +52,18 @@
             UIButton *aButton = [[UIButton alloc] init];
             if ((i == 2 && j == 3) || (i == 0 && j == 3) || (i == 2 && j == 4)) {
                 //確定ボタンの作成
-                [aButton setFrame:CGRectMake((_buttonsView.bounds.size.width - 3 * _margin)/_buttonsColumn * j + _margin * j,
-                                             (_buttonsView.bounds.size.height - 4 * _margin)/_buttonsRow * i + _margin * i,
-                                             (_buttonsView.bounds.size.width -3 * _margin)/_buttonsColumn,
-                                             (_buttonsView.bounds.size.height -4 * _margin)/_buttonsRow * 2 + _margin)];
+                [aButton setFrame:CGRectMake((_buttonsView.bounds.size.width - 4 * _margin)/_buttonsColumn * j + _margin * j,
+                                             (_buttonsView.bounds.size.height - 3 * _margin)/_buttonsRow * i + _margin * i,
+                                             (_buttonsView.bounds.size.width -4 * _margin)/_buttonsColumn,
+                                             (_buttonsView.bounds.size.height -3 * _margin)/_buttonsRow * 2 + _margin)];
             } else if ((i == 3 && j == 3) || (i == 1 && j == 3) || (i == 3 && j == 4)) {
                 continue;
             }
             else {
-                [aButton setFrame:CGRectMake((_buttonsView.bounds.size.width - 3 * _margin)/_buttonsColumn * j + _margin * j,
-                                             (_buttonsView.bounds.size.height - 4 * _margin)/_buttonsRow * i + _margin * i,
-                                             (_buttonsView.bounds.size.width -3 * _margin)/_buttonsColumn,
-                                             (_buttonsView.bounds.size.height -4 * _margin)/_buttonsRow)];
+                [aButton setFrame:CGRectMake((_buttonsView.bounds.size.width - 4 * _margin)/_buttonsColumn * j + _margin * j,
+                                             (_buttonsView.bounds.size.height - 3 * _margin)/_buttonsRow * i + _margin * i,
+                                             (_buttonsView.bounds.size.width -4 * _margin)/_buttonsColumn,
+                                             (_buttonsView.bounds.size.height -3 * _margin)/_buttonsRow)];
             }
             aButton.tag = (i + 1) * 10 + (j + 1);
             [_buttons addObject:aButton];
@@ -136,7 +136,7 @@
 
 - (void)setButtonTitle:(UIButton *)button
 {
-    [button setTitle:[NSString stringWithFormat:@"%ld", button.tag] forState:UIControlStateNormal];
+    
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     switch (button.tag) {

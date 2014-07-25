@@ -14,12 +14,17 @@
 #import "TKBFormulaStringParser.h"
 #import "TKBSEColumnCalcView.h"
 
-@interface TKBViewController () <TKBSESolveViewControllerDelegate>
+@interface TKBViewController () <TKBSESolveViewControllerDelegate, TKBSEAnswerViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *simaltanEquation1Label;
 @property (weak, nonatomic) IBOutlet UILabel *simaltanEquation2Label;
 @property (weak, nonatomic) IBOutlet UIView *columnCalcView1;
 @property (weak, nonatomic) IBOutlet UIView *columnCalcView2;
 @property (weak, nonatomic) IBOutlet UILabel *substitutionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *substitutionLabel2;
+@property (weak, nonatomic) IBOutlet UIButton *xValueButton;
+@property (weak, nonatomic) IBOutlet UIButton *yValueButton;
+@property (weak, nonatomic) IBOutlet UIButton *xSubstituteButton;
+@property (weak, nonatomic) IBOutlet UIButton *ySubstituteButton;
 @property NSInteger curViewNumber;
 
 @end
@@ -40,10 +45,19 @@
 
 - (void)prepareView
 {
+    [_xValueButton setTitle:@"" forState:UIControlStateNormal];
+    [_yValueButton setTitle:@"" forState:UIControlStateNormal];
+    [_xValueButton.titleLabel setFont:[UIFont systemFontOfSize:40]];
+    [_yValueButton.titleLabel setFont:[UIFont systemFontOfSize:40]];
+    [[_xValueButton layer]      setBorderWidth:1];
+    [[_yValueButton layer]      setBorderWidth:1];
+    [[_xValueButton layer]      setBorderColor:[[UIColor blackColor] CGColor]];
+    [[_yValueButton layer]      setBorderColor:[[UIColor blackColor] CGColor]];
     _curViewNumber = 1;
     _answerPopoverContect = [TKBPopoverContext sharedPopoverContext];
     _solvePopoverContect  = [TKBPopoverContext sharedPopoverContext];
     _substitutionLabel.text = @"";
+    _substitutionLabel2.text = @"";
     _simaltanEquation1Label.text = [NSString stringWithFormat:@"%@ ...①", [_seq toStringWithNumberOfFormula:1]];
     _simaltanEquation2Label.text = [NSString stringWithFormat:@"%@ ...②", [_seq toStringWithNumberOfFormula:2]];
     [_seq display];
@@ -63,19 +77,53 @@
                                                          animated:YES];
 }
 
-- (IBAction)didTapAnswerButton:(id)sender
-{
-    //解答用のポップオーバーの表示
+- (IBAction)didTapXValueButton:(id)sender {
     TKBSEAnswerViewController *contentViewController = [[TKBSEAnswerViewController alloc] initWithNibName:NSStringFromClass([TKBSEAnswerViewController class])
                                                                                                    bundle:[NSBundle mainBundle]];
-    [_answerPopoverContect presentPopoverWithContentViewController:contentViewController
-                                                          fromRect:((UIButton *)sender).frame
-                                                            inView:self.view
-                                          permittedArrowDirections:UIPopoverArrowDirectionDown
-                                                          animated:YES];
     
+    contentViewController.isX = YES;
+    contentViewController.delegate = self;
+    [_solvePopoverContect presentPopoverWithContentViewController:contentViewController
+                                                         fromRect:((UIButton *)sender).frame
+                                                           inView:self.view
+                                         permittedArrowDirections:UIPopoverArrowDirectionDown
+                                                         animated:YES];
     
 }
+
+- (IBAction)didTapYValueButton:(id)sender {
+    TKBSEAnswerViewController *contentViewController = [[TKBSEAnswerViewController alloc] initWithNibName:NSStringFromClass([TKBSEAnswerViewController class])
+                                                                                                   bundle:[NSBundle mainBundle]];
+    
+    contentViewController.isX = NO;
+    contentViewController.delegate = self;
+    [_solvePopoverContect presentPopoverWithContentViewController:contentViewController
+                                                         fromRect:((UIButton *)sender).frame
+                                                           inView:self.view
+                                         permittedArrowDirections:UIPopoverArrowDirectionDown
+                                                         animated:YES];
+
+}
+
+- (IBAction)didTapXSubstituteButton:(id)sender {
+    if ([_xValueButton.titleLabel.text isInteger]) {
+        _substitutionLabel.text = [_seq.se1 toStringSubstitutionToVarIsX:YES substituteNumber:[_xValueButton.titleLabel.text integerValue]];
+    }
+    
+}
+
+- (IBAction)didTapYSubstituteButton:(id)sender {
+    if ([_yValueButton.titleLabel.text isInteger]) {
+        _substitutionLabel.text = [_seq.se1 toStringSubstitutionToVarIsX:NO substituteNumber:[_yValueButton.titleLabel.text integerValue]];
+    }
+}
+
+- (IBAction)didTapAnswerButton:(id)sender {
+}
+
+- (IBAction)didTapNextButton:(id)sender {
+}
+
 
 - (void)didTappetReturnButton:(TKBSESolveViewController *)vc
 {
@@ -134,6 +182,14 @@
     
     
 }
+
+- (void)dismissViewController:(TKBSEAnswerViewController *)vc
+{
+    if (vc.isX) [_xValueButton setTitle:vc.answer forState:UIControlStateNormal];
+    else        [_yValueButton setTitle:vc.answer forState:UIControlStateNormal];
+    
+}
+
 
 
 - (void)didReceiveMemoryWarning
